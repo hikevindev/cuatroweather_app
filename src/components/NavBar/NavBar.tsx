@@ -1,3 +1,4 @@
+import { LangSwitch } from '../LangSwitch/LangSwitch'
 import './NavBar.scss'
 
 export const NavBar = () => {
@@ -7,10 +8,7 @@ export const NavBar = () => {
                 <h1>CuatroWeatherApp</h1>
             </div>
             <div className="navbar__actions">
-                <select>
-                    <option>Ingles</option>
-                    <option>Español</option>
-                </select>
+                <LangSwitch />
                 <button>Cerrar Sesión</button>
             </div>
         </header>
