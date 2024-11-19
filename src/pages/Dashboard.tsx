@@ -1,23 +1,16 @@
-import { useState } from "react"
 import { useTranslation } from "react-i18next"
-import { WeatherRepo } from "../repositories/weatherRepository"
-import { WeatherService } from "../services/weatherService"
+import { SideBar } from '../components/SideBar/SideBar';
 
-const weatherService = new WeatherService(new WeatherRepo())
 
 const Dashboard = () => {
-    const [city, setCity] = useState()
-    const [weather, setWeather] = useState()
     const { t } = useTranslation()
     
-    const handleCityWeather = async () => {
-        const weatherData = await weatherService.getWeatherByCity('Valencia');
-    }
-
     return (
-        <div>
-            Dashboard, {t('welcome')} , kevin
-            <button onClick={handleCityWeather}>setear valencia</button>
+        <div className="dashboard">
+            <SideBar />
+            <section className="dashboard__content">
+                <p>contenido</p>
+            </section>
         </div>
     )
 }
