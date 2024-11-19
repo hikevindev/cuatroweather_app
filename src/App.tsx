@@ -1,7 +1,14 @@
-import React from 'react';
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import logo from './logo.svg';
 import './App.css';
+import Dashboard from "./pages/Dashboard";
 
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Dashboard />
+  }
+])
 function App() {
   return (
     <div className="App">
