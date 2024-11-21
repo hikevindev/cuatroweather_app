@@ -1,0 +1,44 @@
+.weather-panel {
+  height: fit-content;
+  padding: 2rem 4rem;
+  border-radius: 8px;
+  background-color: #ffffff;
+
+  &__values {
+    display: flex;
+  }
+
+  &__media {
+    width: 200px;
+  }
+  &__value-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__date {
+    font-size: 12px;
+    color: #818181;
+    margin-bottom: 0.5rem;
+  }
+
+  &__description {
+    font-size: 26px;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  &__temp {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  &__humity {
+    font-size: 2.5rem;
+  }
+}

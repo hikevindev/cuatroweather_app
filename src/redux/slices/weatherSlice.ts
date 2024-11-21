@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import type { PayloadAction } from '@reduxjs/toolkit';
-import { WeatherSlice, WeatherSliceType } from './types';
+import { WeatherSliceType } from './types';
 import { WeatherService } from '../../services/weatherService';
 import { WeatherRepo } from '../../repositories/weatherRepository';
 

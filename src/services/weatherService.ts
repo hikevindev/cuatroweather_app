@@ -11,7 +11,14 @@ export class WeatherService {
     const currentWeather =
       await this.weatherRepository.getCurrentWeather(location);
     return {
-      ...currentWeather,
+      city: currentWeather.name,
+      humidity: currentWeather.main.humidity,
+      tempFeels: currentWeather.main.feels_like,
+      temp: currentWeather.main.temp,
+      tempMax: currentWeather.main.temp_max,
+      tempMin: currentWeather.main.temp_min,
+      windVelocity: currentWeather.wind.speed,
+      weather: currentWeather.weather[0],
     };
   }
 
