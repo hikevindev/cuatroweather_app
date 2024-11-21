@@ -6,6 +6,7 @@ import { AppDispatch } from '../../redux/store';
 import React, { useState } from 'react';
 
 import './SideBar.scss';
+import { fetchForecast } from '../../redux/slices/forecastSlice';
 
 export const SideBar = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -14,10 +15,12 @@ export const SideBar = () => {
 
   useEffect(() => {
     dispatch(fetchWeather('Londres'));
+    dispatch(fetchForecast('Londres'));
   }, []);
 
   const changeWeatherCity = (location: string) => {
     dispatch(fetchWeather(location));
+    dispatch(fetchForecast(location));
   };
 
   return (

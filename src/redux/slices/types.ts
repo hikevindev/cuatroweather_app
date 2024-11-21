@@ -9,6 +9,13 @@ export type WeatherSlice = {
   windVelocity: number;
 };
 
+export type forecastSliceType = {
+  list: Array<any> | null;
+  city: object | null;
+  loading: boolean;
+  error: boolean;
+};
+
 export type weather = {
   id: number;
   icon: string;

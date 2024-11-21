@@ -1,8 +1,12 @@
 .minimal-card {
-  padding: 2rem 2rem;
+  padding: 2.5rem 1rem;
   background-color: white;
   width: fit-content;
   height: 12rem;
   width: 25%;
   border-radius: 8px;
+
+  &__date {
+    text-align: center;
+  }
 }
