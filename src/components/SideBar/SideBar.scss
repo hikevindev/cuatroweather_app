@@ -1,9 +1,12 @@
 .sidebar {
   display: flex;
   flex-direction: column;
-  padding: 2rem 2rem;
+  padding: 5rem 2rem;
 
   &__option {
+    font-size: 1.2rem;
+    font-weight: bolder;
     cursor: pointer;
+    color: #cccccc;
   }
 }
