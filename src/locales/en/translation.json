@@ -13,5 +13,14 @@
     "singapur": "Singapore",
     "madrid": "Madrid"
   },
-  "contact": "Contact"
+  "contact": "Contact",
+  "contact-form": {
+    "title": "Contact form",
+    "name": "Name",
+    "bornDate": "Date of birth",
+    "city": "City",
+    "email": "Email",
+    "phone": "Phone",
+    "send": "Send"
+  }
 }

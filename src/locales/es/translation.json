@@ -13,5 +13,14 @@
     "singapur": "Singapure",
     "madrid": "Madrid"
   },
-  "contact": "Contacto"
+  "contact": "Contacto",
+  "contact-form": {
+    "title": "Formulario de contacto",
+    "name": "Nombre",
+    "bornDate": "Fecha de nacimiento",
+    "city": "Ciudad",
+    "email": "Email",
+    "phone": "Teléfono",
+    "send": "Enviar"
+  }
 }
