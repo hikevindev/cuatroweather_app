@@ -12,8 +12,11 @@ export const sessionSlice = createSlice({
     signIn: (state, action: PayloadAction<string>) => {
       state.user = action.payload;
     },
+    signOut: (state) => {
+      state.user = null;
+    },
   },
 });
 
-export const { signIn } = sessionSlice.actions;
+export const { signIn, signOut } = sessionSlice.actions;
 export default sessionSlice.reducer;
