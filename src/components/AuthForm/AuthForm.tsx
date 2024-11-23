@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
+import { useDispatch } from 'react-redux';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
+
 import './AuthForm.scss';
+import { signIn } from '../../redux/slices/sessionSlice';
 
 const loginSchema = z.object({
   email: z.string().email('Email invalido'),
@@ -12,6 +14,7 @@ const loginSchema = z.object({
 type LoginInputs = z.infer<typeof loginSchema>;
 
 export const AuthForm = () => {
+  const dispatch = useDispatch();
   const {
     register,
     handleSubmit,
@@ -20,8 +23,8 @@ export const AuthForm = () => {
     resolver: zodResolver(loginSchema),
   });
 
-  const onSubmit: SubmitHandler<LoginInputs> = (data) => {
-    console.log(data);
+  const onSubmit: SubmitHandler<LoginInputs> = (data: any) => {
+    dispatch(signIn(data.email));
   };
 
   return (
@@ -38,7 +41,7 @@ export const AuthForm = () => {
           </div>
           <div className="auth-form__field">
             <label>Contraseña</label>
-            <input {...register('password')} />
+            <input type="password" {...register('password')} />
             {errors.password && (
               <p className="auth-form__error">{errors.password.message}</p>
             )}

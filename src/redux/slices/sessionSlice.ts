@@ -15,4 +15,5 @@ export const sessionSlice = createSlice({
   },
 });
 
+export const { signIn } = sessionSlice.actions;
 export default sessionSlice.reducer;

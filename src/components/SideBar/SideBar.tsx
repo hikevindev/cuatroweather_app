@@ -7,6 +7,7 @@ import React, { useState } from 'react';
 
 import './SideBar.scss';
 import { fetchForecast } from '../../redux/slices/forecastSlice';
+import moment from 'moment';
 
 export const SideBar = () => {
   const dispatch = useDispatch<AppDispatch>();
