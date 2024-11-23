@@ -3,16 +3,30 @@ import { useTranslation } from 'react-i18next';
 import { useEffect } from 'react';
 import { fetchWeather } from '../../redux/slices/weatherSlice';
 import { AppDispatch } from '../../redux/store';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import './SideBar.scss';
 import { fetchForecast } from '../../redux/slices/forecastSlice';
-import moment from 'moment';
 
 export const SideBar = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { t } = useTranslation();
   const [locationSearch, setLocationSearch] = useState('');
+
+  const countryList = [
+    {
+      name: t('weatherCityList.london'),
+    },
+    {
+      name: t('weatherCityList.toronto'),
+    },
+    {
+      name: t('weatherCityList.singapur'),
+    },
+    {
+      name: t('weatherCityList.madrid'),
+    },
+  ];
 
   useEffect(() => {
     dispatch(fetchWeather('Londres'));
@@ -41,30 +55,14 @@ export const SideBar = () => {
       </div>
       <div>
         <nav>
-          <p
-            className="sidebar__option"
-            onClick={() => changeWeatherCity('Londres')}
-          >
-            Londres
-          </p>
-          <p
-            className="sidebar__option"
-            onClick={() => changeWeatherCity('Toronto')}
-          >
-            Toronto
-          </p>
-          <p
-            className="sidebar__option"
-            onClick={() => changeWeatherCity('Singapur')}
-          >
-            Singapur
-          </p>
-          <p
-            className="sidebar__option"
-            onClick={() => changeWeatherCity('Madrid')}
-          >
-            Madrid
-          </p>
+          {countryList.map(({ name }) => (
+            <p
+              className="sidebar__option"
+              onClick={() => changeWeatherCity(name)}
+            >
+              {name}
+            </p>
+          ))}
         </nav>
       </div>
     </aside>

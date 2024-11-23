@@ -1,10 +1,16 @@
 {
   "welcome": "Bienvenido!",
-  "es": "Ingles",
-  "en": "Español",
+  "es": "Español",
+  "en": "Ingles",
   "signIn": "Iniciar sesión",
   "signOut": "Cerrar sesión",
   "city": "Ciudad",
   "email": "Email",
-  "password": "Contraseña"
+  "password": "Contraseña",
+  "weatherCityList": {
+    "london": "Lodres",
+    "toronto": "Toronto",
+    "singapur": "Singapure",
+    "madrid": "Madrid"
+  }
 }

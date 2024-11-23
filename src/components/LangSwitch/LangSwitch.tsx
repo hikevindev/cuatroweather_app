@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 export const LangSwitch = () => {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
 
   const changeLanguage = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedLanguage = event.target.value;
@@ -11,8 +11,8 @@ export const LangSwitch = () => {
 
   return (
     <select value={i18n.language} onChange={changeLanguage}>
-      <option value="en">Ingles</option>
-      <option value="es">Español</option>
+      <option value="en">{t('en')}</option>
+      <option value="es">{t('es')}</option>
     </select>
   );
 };
