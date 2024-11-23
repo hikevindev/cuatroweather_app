@@ -11,11 +11,12 @@ export const useAuthSession = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (user) {
-      navigate(DASHBOARD);
-      return;
-    }
-    navigate(LOGIN);
+    //:::::Corregir el sistema de autenticacion
+    // if (user) {
+    //   navigate(DASHBOARD);
+    //   return;
+    // }
+    // navigate(LOGIN);
   }, [user]);
 
   const signOutSession = () => {

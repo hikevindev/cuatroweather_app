@@ -2,8 +2,6 @@ import { useSelector } from 'react-redux';
 import { MinimalCard } from '../components/MinimalCard/MinimalCard';
 import { SideBar } from '../components/SideBar/SideBar';
 import { WeatherPanel } from '../components/WeatherPanel/WeatherPanel';
-import { WeatherRepo } from '../repositories/weatherRepository';
-import { WeatherService } from '../services/weatherService';
 import { RootState } from '../redux/store';
 import { NavBar } from '../components/NavBar/NavBar';
 

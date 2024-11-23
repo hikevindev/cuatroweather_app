@@ -7,9 +7,12 @@ import { useState } from 'react';
 
 import './SideBar.scss';
 import { fetchForecast } from '../../redux/slices/forecastSlice';
+import { useNavigate } from 'react-router-dom';
+import { CONTACT_FORM, LOGIN } from '../../config/constants/navigationItems';
 
 export const SideBar = () => {
   const dispatch = useDispatch<AppDispatch>();
+  const navigate = useNavigate();
   const { t } = useTranslation();
   const [locationSearch, setLocationSearch] = useState('');
 
@@ -38,6 +41,10 @@ export const SideBar = () => {
     dispatch(fetchForecast(location));
   };
 
+  const goContact = () => {
+    navigate(CONTACT_FORM);
+  };
+
   return (
     <aside className="sidebar">
       <div className="sidebar__search">
@@ -53,18 +60,19 @@ export const SideBar = () => {
           {'->'}
         </button>
       </div>
-      <div>
-        <nav>
-          {countryList.map(({ name }) => (
-            <p
-              className="sidebar__option"
-              onClick={() => changeWeatherCity(name)}
-            >
-              {name}
-            </p>
-          ))}
-        </nav>
-      </div>
+      <nav>
+        {countryList.map(({ name }) => (
+          <p
+            className="sidebar__option"
+            onClick={() => changeWeatherCity(name)}
+          >
+            {name}
+          </p>
+        ))}
+        <p onClick={() => goContact()} className="sidebar__option">
+          {t('contact')}
+        </p>
+      </nav>
     </aside>
   );
 };

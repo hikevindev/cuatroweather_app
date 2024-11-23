@@ -1,7 +1,8 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Dashboard from '../pages/Dashboard';
 import Login from '../pages/Login';
-import { DASHBOARD, LOGIN } from './constants/navigationItems';
+import Contact from '../pages/Contact';
+import { CONTACT_FORM, DASHBOARD, LOGIN } from './constants/navigationItems';
 
 export const router = createBrowserRouter([
   {
@@ -11,5 +12,9 @@ export const router = createBrowserRouter([
   {
     path: DASHBOARD,
     element: <Dashboard />,
+  },
+  {
+    path: CONTACT_FORM,
+    element: <Contact />,
   },
 ]);
