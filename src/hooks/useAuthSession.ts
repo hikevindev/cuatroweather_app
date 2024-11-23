@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../redux/store';
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { DASHBOARD, LOGIN } from '../config/constants/navigationItems';
 import { signOut } from '../redux/slices/sessionSlice';
 
@@ -11,12 +11,9 @@ export const useAuthSession = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    //:::::Corregir el sistema de autenticacion
-    // if (user) {
-    //   navigate(DASHBOARD);
-    //   return;
-    // }
-    // navigate(LOGIN);
+    if (!user) {
+      navigate(LOGIN);
+    }
   }, [user]);
 
   const signOutSession = () => {

@@ -1,3 +1,4 @@
+import { ContactForm } from '../components/ContactForm/ContactForm';
 import { NavBar } from '../components/NavBar/NavBar';
 import { SideBar } from '../components/SideBar/SideBar';
 
@@ -8,7 +9,7 @@ const Contact = () => {
       <main className="dashboard">
         <SideBar />
         <section className="dashboard__content">
-          <p>Formulario de contacto</p>
+          <ContactForm />
         </section>
       </main>
     </>

@@ -1,18 +1,14 @@
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { z } from 'zod';
+import { useTranslation } from 'react-i18next';
+import { signIn } from '../../redux/slices/sessionSlice';
 import { zodResolver } from '@hookform/resolvers/zod';
 
 import './AuthForm.scss';
-import { signIn } from '../../redux/slices/sessionSlice';
-import { useTranslation } from 'react-i18next';
+import { LOGIN_SCHEMA } from '../../config/schemas/FormSchema';
 
-const loginSchema = z.object({
-  email: z.string().email('Email invalido'),
-  password: z.string().min(6, 'La contraseña debe tener al menos 6 caracteres'),
-});
-
-type LoginInputs = z.infer<typeof loginSchema>;
+type LoginInputs = z.infer<typeof LOGIN_SCHEMA>;
 
 export const AuthForm = () => {
   const { t } = useTranslation();
@@ -22,7 +18,7 @@ export const AuthForm = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<LoginInputs>({
-    resolver: zodResolver(loginSchema),
+    resolver: zodResolver(LOGIN_SCHEMA),
   });
 
   const onSubmit: SubmitHandler<LoginInputs> = (data: any) => {

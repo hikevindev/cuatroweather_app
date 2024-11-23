@@ -1,0 +1,20 @@
+.contact-form {
+  padding-top: 4rem;
+  color: #ffffff;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+
+    input {
+      height: 1.8rem;
+      border: 1px solid #1c2b3f;
+      border-radius: 4px;
+    }
+
+    p {
+      color: #ff3232;
+    }
+  }
+}
