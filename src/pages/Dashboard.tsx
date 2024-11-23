@@ -17,7 +17,7 @@ const Dashboard = () => {
   );
 
   return (
-    <div className="dashboard">
+    <main className="dashboard">
       <SideBar />
       <section className="dashboard__content">
         <WeatherPanel />
@@ -25,7 +25,7 @@ const Dashboard = () => {
           {list?.map((forecast: any) => <MinimalCard data={forecast} />)}
         </div>
       </section>
-    </div>
+    </main>
   );
 };
 
