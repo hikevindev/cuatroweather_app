@@ -28,3 +28,7 @@ export type WeatherSliceType = {
   error: boolean;
   data: null | WeatherSlice;
 };
+
+export type SessionSliceType = {
+  user: null | string;
+};
