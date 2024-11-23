@@ -1,5 +1,10 @@
 {
   "welcome": "Welcome",
   "es": "English",
-  "en": "Spanish"
+  "en": "Spanish",
+  "signIn": "Login",
+  "signOut": "Sign Out",
+  "city": "City",
+  "email": "Email",
+  "password": "Password"
 }

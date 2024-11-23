@@ -1,5 +1,10 @@
 {
   "welcome": "Bienvenido!",
   "es": "Ingles",
-  "en": "Español"
+  "en": "Español",
+  "signIn": "Iniciar sesión",
+  "signOut": "Cerrar sesión",
+  "city": "Ciudad",
+  "email": "Email",
+  "password": "Contraseña"
 }

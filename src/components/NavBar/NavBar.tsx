@@ -1,9 +1,11 @@
+import { useTranslation } from 'react-i18next';
 import { useAuthSession } from '../../hooks/useAuthSession';
 import { LangSwitch } from '../LangSwitch/LangSwitch';
 import './NavBar.scss';
 
 export const NavBar = () => {
-  const { signOut } = useAuthSession();
+  const { authenticated, signOut } = useAuthSession();
+  const { t } = useTranslation();
 
   return (
     <header className="navbar">
@@ -12,7 +14,9 @@ export const NavBar = () => {
       </div>
       <div className="navbar__actions">
         <LangSwitch />
-        <button onClick={() => signOut()}>Cerrar Sesión</button>
+        {authenticated && (
+          <button onClick={() => signOut()}>{t('signOut')}</button>
+        )}
       </div>
     </header>
   );
