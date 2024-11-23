@@ -7,6 +7,7 @@ import { WeatherPanel } from '../components/WeatherPanel/WeatherPanel';
 import { WeatherRepo } from '../repositories/weatherRepository';
 import { WeatherService } from '../services/weatherService';
 import { RootState } from '../redux/store';
+import { NavBar } from '../components/NavBar/NavBar';
 
 const weatherService = new WeatherService(new WeatherRepo());
 
@@ -17,15 +18,18 @@ const Dashboard = () => {
   );
 
   return (
-    <main className="dashboard">
-      <SideBar />
-      <section className="dashboard__content">
-        <WeatherPanel />
-        <div className="minimalcard">
-          {list?.map((forecast: any) => <MinimalCard data={forecast} />)}
-        </div>
-      </section>
-    </main>
+    <>
+      <NavBar />
+      <main className="dashboard">
+        <SideBar />
+        <section className="dashboard__content">
+          <WeatherPanel />
+          <div className="minimalcard">
+            {list?.map((forecast: any) => <MinimalCard data={forecast} />)}
+          </div>
+        </section>
+      </main>
+    </>
   );
 };
 

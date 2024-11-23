@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { DASHBOARD } from '../config/constants/navigationItems';
 import { useAuthSession } from '../hooks/useAuthSession';
+import { NavBar } from '../components/NavBar/NavBar';
 
 export const Login = () => {
   const { user } = useSelector((state: RootState) => state.session);
@@ -17,11 +18,14 @@ export const Login = () => {
   }, [user]);
 
   return (
-    <main>
-      <section>
-        <AuthForm />
-      </section>
-    </main>
+    <>
+      <NavBar />
+      <main>
+        <section>
+          <AuthForm />
+        </section>
+      </main>
+    </>
   );
 };
 
