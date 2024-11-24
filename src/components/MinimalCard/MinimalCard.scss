@@ -1,4 +1,7 @@
 .minimal-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 2.5rem 1rem;
   background-color: white;
   width: fit-content;

@@ -8,11 +8,11 @@ export const MinimalCard = ({ data }: any) => {
   const { dt_txt = '', main = {}, weather = {} } = data;
 
   moment.locale(i18n.language);
-  const formatDate = (date: Date) => moment().calendar(date);
+  const formattedDayTime = moment(dt_txt).format('DD/MM/YYYY, h:mm');
 
   return (
     <section className="minimal-card">
-      <p className="minimal-card__date">{formatDate(dt_txt)}</p>
+      <p className="minimal-card__date">{formattedDayTime}</p>
       <img
         className="minimal-card__media"
         src={`https://openweathermap.org/img/wn/${weather[0].icon}@2x.png`}
