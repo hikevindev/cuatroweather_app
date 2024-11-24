@@ -1,6 +1,10 @@
 .contact-form {
   padding-top: 4rem;
-  color: #ffffff;
+  color: hsl(0, 0%, 100%);
+  height: fit-content;
+  padding: 6rem;
+  background-color: #2c425e;
+  border-radius: 4px;
 
   div {
     display: flex;

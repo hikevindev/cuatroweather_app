@@ -13,6 +13,7 @@ export const ContactForm = () => {
   const {
     register,
     handleSubmit,
+    watch,
     formState: { errors },
   } = useForm<ContactInputs>({
     resolver: zodResolver(CONTACT_FORM_SCHEMA),
@@ -21,6 +22,13 @@ export const ContactForm = () => {
   const onSubmit: SubmitHandler<ContactInputs> = (data: any) => {
     console.log('Form', data);
   };
+  const formValues = watch();
+  const allFieldFilled =
+    formValues.name &&
+    formValues.phone &&
+    formValues.email &&
+    formValues.city &&
+    formValues.birthDay;
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="contact-form">
@@ -47,10 +55,12 @@ export const ContactForm = () => {
       </div>
       <div>
         <label>{t('contact-form.phone')}</label>
-        <input {...register('phone')} />
+        <input type="number" {...register('phone')} />
         {errors.phone && <p>{errors.phone.message}</p>}
       </div>
-      <button type="submit">{t('contact-form.send')}</button>
+      <button type="submit" disabled={!allFieldFilled}>
+        {t('contact-form.send')}
+      </button>
     </form>
   );
 };
