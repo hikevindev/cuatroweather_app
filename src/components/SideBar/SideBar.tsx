@@ -7,12 +7,13 @@ import { useState } from 'react';
 
 import './SideBar.scss';
 import { fetchForecast } from '../../redux/slices/forecastSlice';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { CONTACT_FORM, LOGIN } from '../../config/constants/navigationItems';
 
 export const SideBar = () => {
   const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
+  const location = useLocation();
   const { t, i18n } = useTranslation();
   const [locationSearch, setLocationSearch] = useState('');
 
@@ -36,11 +37,13 @@ export const SideBar = () => {
       location: 'Londres',
       lang: i18n.language,
     };
+
     dispatch(fetchWeather(configDispatchData));
     dispatch(fetchForecast(configDispatchData));
   }, []);
 
   const changeWeatherCity = (location: string) => {
+    navigate('/dashboard');
     const configDispatchData = {
       location: location,
       lang: i18n.language,
@@ -55,7 +58,7 @@ export const SideBar = () => {
 
   return (
     <aside className="sidebar">
-      <div className="sidebar__search">
+      {/* <div className="sidebar__search">
         <input
           value={locationSearch}
           onChange={(ev) => {
@@ -67,7 +70,7 @@ export const SideBar = () => {
         <button onClick={() => changeWeatherCity(locationSearch)}>
           {'->'}
         </button>
-      </div>
+      </div> */}
       <nav>
         {countryList.map(({ name }) => (
           <p

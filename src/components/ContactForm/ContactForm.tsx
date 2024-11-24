@@ -26,6 +26,7 @@ export const ContactForm = () => {
     toast.success(t('contact-form.success'));
     reset();
   };
+
   const formValues = watch();
   const allFieldFilled =
     formValues.name &&
