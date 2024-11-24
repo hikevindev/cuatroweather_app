@@ -8,7 +8,6 @@ export class WeatherRepo implements IweatherRepo {
     params: {
       appid: API_KEY,
       units: 'metric',
-      // lang: i18n.language,
     },
   });
 
