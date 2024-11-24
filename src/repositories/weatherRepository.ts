@@ -1,5 +1,4 @@
 import axios from 'axios';
-import i18n from '../config/i18n';
 import { API_KEY, BASE_URL } from '../config/weatherConfig';
 import { IweatherRepo } from './IweatherRepository';
 

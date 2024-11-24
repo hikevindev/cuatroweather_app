@@ -1,8 +1,8 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../redux/store';
 import { useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { DASHBOARD, LOGIN } from '../config/constants/navigationItems';
+import { useNavigate } from 'react-router-dom';
+import { LOGIN } from '../config/constants/navigationItems';
 import { signOut } from '../redux/slices/sessionSlice';
 
 export const useAuthSession = () => {

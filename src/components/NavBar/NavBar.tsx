@@ -1,3 +1,4 @@
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useAuthSession } from '../../hooks/useAuthSession';
 import { LangSwitch } from '../LangSwitch/LangSwitch';

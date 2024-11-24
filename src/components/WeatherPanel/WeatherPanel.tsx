@@ -1,13 +1,12 @@
+import React from 'react';
 import { useSelector } from 'react-redux';
+import moment from 'moment';
 import { RootState } from '../../redux/store';
 
 import './WeatherPanel.scss';
-import moment from 'moment';
 
 export const WeatherPanel = () => {
-  const { loading, error, data } = useSelector(
-    (state: RootState) => state.weather
-  );
+  const { data } = useSelector((state: RootState) => state.weather);
   const todayString = moment().format('DD [de] MMMM');
 
   return (

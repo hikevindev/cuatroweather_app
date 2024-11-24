@@ -15,7 +15,7 @@ export type fetchWeaterParams = {
 };
 
 export type forecastSliceType = {
-  list: Array<any> | null;
+  list: Array<object> | null;
   city: object | null;
   loading: boolean;
   error: boolean;

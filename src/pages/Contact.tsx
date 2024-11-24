@@ -1,3 +1,4 @@
+import React from 'react';
 import { ContactForm } from '../components/ContactForm/ContactForm';
 import { NavBar } from '../components/NavBar/NavBar';
 import { SideBar } from '../components/SideBar/SideBar';

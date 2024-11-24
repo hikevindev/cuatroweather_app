@@ -1,3 +1,4 @@
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { MinimalCard } from '../components/MinimalCard/MinimalCard';
 import { SideBar } from '../components/SideBar/SideBar';
@@ -6,9 +7,7 @@ import { RootState } from '../redux/store';
 import { NavBar } from '../components/NavBar/NavBar';
 
 const Dashboard = () => {
-  const { list, city, loading, error } = useSelector(
-    (state: RootState) => state.forecast
-  );
+  const { list } = useSelector((state: RootState) => state.forecast);
 
   return (
     <>
@@ -18,7 +17,9 @@ const Dashboard = () => {
         <section className="dashboard__content">
           <WeatherPanel />
           <div className="minimalcard">
-            {list?.map((forecast: any) => <MinimalCard data={forecast} />)}
+            {list?.map((forecast: object, key: number) => (
+              <MinimalCard key={key} data={forecast} />
+            ))}
           </div>
         </section>
       </main>

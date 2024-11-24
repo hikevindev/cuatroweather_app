@@ -1,21 +1,18 @@
+import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { fetchWeather } from '../../redux/slices/weatherSlice';
 import { AppDispatch } from '../../redux/store';
-import { useState } from 'react';
+import { fetchForecast } from '../../redux/slices/forecastSlice';
+import { CONTACT_FORM } from '../../config/constants/navigationItems';
 
 import './SideBar.scss';
-import { fetchForecast } from '../../redux/slices/forecastSlice';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { CONTACT_FORM, LOGIN } from '../../config/constants/navigationItems';
 
 export const SideBar = () => {
   const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
-  const location = useLocation();
   const { t, i18n } = useTranslation();
-  const [locationSearch, setLocationSearch] = useState('');
 
   const countryList = [
     {
@@ -58,22 +55,10 @@ export const SideBar = () => {
 
   return (
     <aside className="sidebar">
-      {/* <div className="sidebar__search">
-        <input
-          value={locationSearch}
-          onChange={(ev) => {
-            setLocationSearch(ev.target.value);
-          }}
-          type="text"
-          placeholder="Ciudad"
-        />
-        <button onClick={() => changeWeatherCity(locationSearch)}>
-          {'->'}
-        </button>
-      </div> */}
       <nav>
-        {countryList.map(({ name }) => (
+        {countryList.map(({ name }, key: number) => (
           <p
+            key={key}
             className="sidebar__option"
             onClick={() => changeWeatherCity(name)}
           >

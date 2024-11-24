@@ -1,3 +1,4 @@
+import React from 'react';
 import { AuthForm } from '../components/AuthForm/AuthForm';
 import { useSelector } from 'react-redux';
 import { RootState } from '../redux/store';

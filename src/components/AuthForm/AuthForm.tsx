@@ -1,12 +1,13 @@
+import React from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { z } from 'zod';
 import { useTranslation } from 'react-i18next';
 import { signIn } from '../../redux/slices/sessionSlice';
+import { LOGIN_SCHEMA } from '../../config/schemas/FormSchema';
 import { zodResolver } from '@hookform/resolvers/zod';
 
 import './AuthForm.scss';
-import { LOGIN_SCHEMA } from '../../config/schemas/FormSchema';
 
 type LoginInputs = z.infer<typeof LOGIN_SCHEMA>;
 
@@ -21,7 +22,7 @@ export const AuthForm = () => {
     resolver: zodResolver(LOGIN_SCHEMA),
   });
 
-  const onSubmit: SubmitHandler<LoginInputs> = (data: any) => {
+  const onSubmit: SubmitHandler<LoginInputs> = (data: LoginInputs) => {
     dispatch(signIn(data.email));
   };
 

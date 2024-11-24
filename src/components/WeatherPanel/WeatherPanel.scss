@@ -1,6 +1,8 @@
 .weather-panel {
-  height: fit-content;
-  padding: 2rem 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 21rem;
   border-radius: 8px;
   background-color: #ffffff;
 

@@ -1,3 +1,4 @@
+import React from 'react';
 import { z } from 'zod';
 import { useTranslation } from 'react-i18next';
 import { ToastContainer, toast } from 'react-toastify';
@@ -23,6 +24,7 @@ export const ContactForm = () => {
   });
 
   const onSubmit: SubmitHandler<ContactInputs> = (data: any) => {
+    console.log(data);
     toast.success(t('contact-form.success'));
     reset();
   };
