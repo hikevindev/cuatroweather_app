@@ -1,15 +1,18 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { WeatherRepo } from '../../repositories/weatherRepository';
 import { WeatherService } from '../../services/weatherService';
-import { forecastSliceType } from './types';
+import { forecastSliceType, fetchWeaterParams } from './types';
 
 const weatherService = new WeatherService(new WeatherRepo());
 
 export const fetchForecast = createAsyncThunk(
   'forecast/fetchForecas',
-  async (location: string, { rejectWithValue }) => {
+  async ({ location, lang }: fetchWeaterParams, { rejectWithValue }) => {
     try {
-      const forecastData = await weatherService.getForecastByCity(location);
+      const forecastData = await weatherService.getForecastByCity(
+        location,
+        lang
+      );
       if (!forecastData) throw new Error('Error al obtener la previsión');
 
       return forecastData;

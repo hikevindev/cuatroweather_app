@@ -13,7 +13,7 @@ import { CONTACT_FORM, LOGIN } from '../../config/constants/navigationItems';
 export const SideBar = () => {
   const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [locationSearch, setLocationSearch] = useState('');
 
   const countryList = [
@@ -32,13 +32,21 @@ export const SideBar = () => {
   ];
 
   useEffect(() => {
-    dispatch(fetchWeather('Londres'));
-    dispatch(fetchForecast('Londres'));
+    const configDispatchData = {
+      location: 'Londres',
+      lang: i18n.language,
+    };
+    dispatch(fetchWeather(configDispatchData));
+    dispatch(fetchForecast(configDispatchData));
   }, []);
 
   const changeWeatherCity = (location: string) => {
-    dispatch(fetchWeather(location));
-    dispatch(fetchForecast(location));
+    const configDispatchData = {
+      location: location,
+      lang: i18n.language,
+    };
+    dispatch(fetchWeather(configDispatchData));
+    dispatch(fetchForecast(configDispatchData));
   };
 
   const goContact = () => {

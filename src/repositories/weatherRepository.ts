@@ -9,20 +9,20 @@ export class WeatherRepo implements IweatherRepo {
     params: {
       appid: API_KEY,
       units: 'metric',
-      lang: i18n.language,
+      // lang: i18n.language,
     },
   });
 
-  async getCurrentWeather(location: string): Promise<any> {
+  async getCurrentWeather(location: string, lang: string): Promise<any> {
     const response = await this.axios.get('weather', {
-      params: { q: location },
+      params: { q: location, lang: lang },
     });
     return response.data;
   }
 
-  async getWeatherForecast(location: string): Promise<any> {
+  async getWeatherForecast(location: string, lang: string): Promise<any> {
     const response = await this.axios.get('forecast', {
-      params: { q: location },
+      params: { q: location, lang: lang },
     });
     return response.data;
   }

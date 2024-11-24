@@ -9,6 +9,11 @@ export type WeatherSlice = {
   windVelocity: number;
 };
 
+export type fetchWeaterParams = {
+  location: string;
+  lang: string;
+};
+
 export type forecastSliceType = {
   list: Array<any> | null;
   city: object | null;

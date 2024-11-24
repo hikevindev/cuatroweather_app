@@ -7,9 +7,11 @@ export class WeatherService {
     this.weatherRepository = weatherRepository;
   }
 
-  async getWeatherByCity(location: string): Promise<any> {
-    const currentWeather =
-      await this.weatherRepository.getCurrentWeather(location);
+  async getWeatherByCity(location: string, lang: string): Promise<any> {
+    const currentWeather = await this.weatherRepository.getCurrentWeather(
+      location,
+      lang
+    );
     return {
       city: currentWeather.name,
       humidity: currentWeather.main.humidity,
@@ -22,8 +24,11 @@ export class WeatherService {
     };
   }
 
-  async getForecastByCity(location: string): Promise<any> {
-    const forecast = await this.weatherRepository.getWeatherForecast(location);
+  async getForecastByCity(location: string, lang: string): Promise<any> {
+    const forecast = await this.weatherRepository.getWeatherForecast(
+      location,
+      lang
+    );
     return {
       ...forecast,
     };

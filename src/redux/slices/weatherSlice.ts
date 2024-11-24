@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { WeatherSliceType } from './types';
+import { WeatherSliceType, fetchWeaterParams } from './types';
 import { WeatherService } from '../../services/weatherService';
 import { WeatherRepo } from '../../repositories/weatherRepository';
 
@@ -7,9 +7,9 @@ const weatherService = new WeatherService(new WeatherRepo());
 
 export const fetchWeather = createAsyncThunk(
   'weather/fetchWeather',
-  async (location: string, { rejectWithValue }) => {
+  async ({ location, lang }: fetchWeaterParams, { rejectWithValue }) => {
     try {
-      const weatherData = await weatherService.getWeatherByCity(location);
+      const weatherData = await weatherService.getWeatherByCity(location, lang);
       if (!weatherData) throw new Error('Error al obtener clima');
 
       return weatherData;
