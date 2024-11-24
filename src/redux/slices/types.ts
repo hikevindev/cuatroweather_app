@@ -5,7 +5,7 @@ export type WeatherSlice = {
   tempFeels: number;
   tempMax: number;
   tempMin: number;
-  weather: weather;
+  weather: weather | null;
   windVelocity: number;
 };
 
