@@ -5,7 +5,10 @@ import { useNavigate } from 'react-router-dom';
 import { fetchWeather } from '../../redux/slices/weatherSlice';
 import { AppDispatch } from '../../redux/store';
 import { fetchForecast } from '../../redux/slices/forecastSlice';
-import { CONTACT_FORM } from '../../config/constants/navigationItems';
+import {
+  CONTACT_FORM,
+  DASHBOARD,
+} from '../../config/constants/navigationItems';
 
 import './SideBar.scss';
 
@@ -40,7 +43,7 @@ export const SideBar = () => {
   }, []);
 
   const changeWeatherCity = (location: string) => {
-    navigate('/dashboard');
+    navigate(DASHBOARD);
     const configDispatchData = {
       location: location,
       lang: i18n.language,
