@@ -6,9 +6,9 @@ export const LOGIN_SCHEMA = z.object({
 });
 
 export const CONTACT_FORM_SCHEMA = z.object({
-  name: z.string().min(0),
+  name: z.string().min(0, 'Nombre requerido'),
   birthDay: z.string().date('Fecha no valida.'),
-  city: z.string().min(1),
+  city: z.string().min(3, 'Introduce una ciudad valida'),
   email: z.string().email('Email invalido.'),
-  phone: z.number().min(1),
+  phone: z.string().min(1, 'Minimo 6 números').max(9, 'Maximo 10 números'),
 });

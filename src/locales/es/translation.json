@@ -21,6 +21,7 @@
     "city": "Ciudad",
     "email": "Email",
     "phone": "Teléfono",
-    "send": "Enviar"
+    "send": "Enviar",
+    "success": "Mensaje enviado correctamente!"
   }
 }
