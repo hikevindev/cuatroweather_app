@@ -4,18 +4,20 @@ import moment from 'moment';
 import { RootState } from '../../redux/store';
 
 import './WeatherPanel.scss';
+import { useTranslation } from 'react-i18next';
 
 export const WeatherPanel = () => {
   const { data } = useSelector((state: RootState) => state.weather);
-  const todayString = moment().format('DD [de] MMMM');
+  const todayString = moment().format('DD [de] MMMM [,] HH:mm');
+  const { t } = useTranslation();
 
   return (
     <section className="weather-panel">
       <div className="weather-panel__values">
         <div className="weather-panel__value-container">
           <div className="weather-panel__header">
-            <h2>CURRENT WEATHER</h2>
-            <span>2:25 PM</span>
+            <h2>{t('currentWeather')}</h2>
+            <span>{todayString}</span>
           </div>
           <div className="weather-panel__main">
             <div>
@@ -39,37 +41,22 @@ export const WeatherPanel = () => {
             <div>
               <div className="weather-panel__dates">
                 <p>
-                  Ciudad <span>{data?.city}</span>
+                  {t('city')} <span>{data?.city}</span>
                 </p>
                 <p>
-                  humedad <span>{data?.humidity}</span>
+                  {t('humidity')} <span>{data?.humidity}%</span>
                 </p>
                 <p>
-                  Sensación termica<span>{data?.tempFeels}</span>
+                  {t('feelsLike')}
+                  <span>{data?.tempFeels} ºc</span>
                 </p>
                 <p>
-                  Velocidad del viento<span>{data?.windVelocity}</span>
+                  {t('windSpeed')}
+                  <span>{data?.windVelocity} Km/h</span>
                 </p>
               </div>
             </div>
           </div>
-          {/* <div>
-            <img
-              src={`https://openweathermap.org/img/wn/${data?.weather?.icon}@2x.png`}
-              alt="Icono del clima"
-              className="weather-panel__media"
-            />
-          </div>
-          <div>
-            <p className="weather-panel__date">
-              {data?.city}, {todayString}
-            </p>
-            
-            <p className="weather-panel__temp">{data?.temp}º</p>
-            <p>
-              {data?.tempMax}º/{data?.tempMin}º
-            </p>
-          </div> */}
         </div>
       </div>
     </section>

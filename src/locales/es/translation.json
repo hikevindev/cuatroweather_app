@@ -7,6 +7,10 @@
   "city": "Ciudad",
   "email": "Email",
   "password": "Contraseña",
+  "humidity": "Humedad",
+  "feelsLike": "Sensación Térmica",
+  "windSpeed": "Velocidad del Viento",
+  "currentWeather": "Tiempo Actual",
   "weatherCityList": {
     "london": "Londres",
     "toronto": "Toronto",
