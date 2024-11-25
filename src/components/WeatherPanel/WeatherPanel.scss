@@ -1,23 +1,68 @@
 .weather-panel {
   display: flex;
-  align-items: center;
   justify-content: center;
   height: 21rem;
   border-radius: 8px;
   background-color: #ffffff;
 
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid #818181;
+    margin-bottom: 2rem;
+  }
+
+  &__dates {
+    p {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+
+      span {
+        font-weight: bold;
+      }
+    }
+  }
+
+  &__main {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    .current-temp {
+      font-size: 50px;
+      font-weight: bold;
+    }
+
+    div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1;
+      height: 100%;
+    }
+  }
+
   &__values {
     display: flex;
+    width: 100%;
   }
 
   &__media {
-    width: 200px;
+    width: 100px;
+    background-color: #00000059;
+    border-radius: 50%;
+    margin-right: 8px;
+    border: 1px solid black;
+    margin-bottom: 10px;
   }
+
   &__value-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
     width: 100%;
+    padding: 0 1rem;
   }
 
   &__date {
@@ -27,7 +72,7 @@
   }
 
   &__description {
-    font-size: 26px;
+    font-size: 16px;
 
     &::first-letter {
       text-transform: uppercase;
