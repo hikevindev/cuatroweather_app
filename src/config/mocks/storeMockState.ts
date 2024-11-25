@@ -6,7 +6,7 @@ export const MOCK_STORE_STATE: Partial<RootState> = {
       city: 'London',
       humidity: 0,
       windVelocity: 0,
-      temp: 0,
+      temp: 24,
       tempFeels: 0,
       tempMax: 0,
       tempMin: 0,
