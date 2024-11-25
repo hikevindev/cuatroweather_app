@@ -9,7 +9,7 @@ Descubre nuestra innovadora aplicación de pronóstico del clima, diseñada para
 React: Para la construcción de la interfaz de usuario.
 Redux Toolkit: Para la gestión eficiente del estado global de la aplicación.
 Moment.js: Para el manejo de fechas y tiempos, con soporte de localización en español.
-CSS/SCSS o cualquier preprocesador (opcional): Para el diseño y estilo de la interfaz (si aplica).
+CSS/SCSS : Para el diseño y estilo de la interfaz.
 
 ## Backend/API:
 
