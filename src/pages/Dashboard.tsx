@@ -6,6 +6,8 @@ import { WeatherPanel } from '../components/WeatherPanel/WeatherPanel';
 import { RootState } from '../redux/store';
 import { NavBar } from '../components/NavBar/NavBar';
 
+import '../styles/containers/Dashboard.scss';
+
 const Dashboard = () => {
   const { list } = useSelector((state: RootState) => state.forecast);
 

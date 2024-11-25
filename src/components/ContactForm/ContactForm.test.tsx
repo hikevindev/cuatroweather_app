@@ -1,10 +1,4 @@
-import React from 'react';
-import { z } from 'zod';
-import { I18nextProvider, useTranslation } from 'react-i18next';
-import { ToastContainer, toast } from 'react-toastify';
-import { SubmitHandler, useForm } from 'react-hook-form';
-import { CONTACT_FORM_SCHEMA } from '../../config/schemas/FormSchema';
-import { zodResolver } from '@hookform/resolvers/zod';
+import { I18nextProvider } from 'react-i18next';
 import { setupStore } from '../../redux/store';
 import { MOCK_STORE_STATE } from '../../config/mocks/storeMockState';
 import { Provider } from 'react-redux';

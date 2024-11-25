@@ -13,3 +13,18 @@
     text-align: center;
   }
 }
+
+.minimalcard {
+  display: flex;
+  gap: 1rem;
+
+  &__date {
+    font-size: 1rem;
+    color: #818181;
+    margin-bottom: 0.5rem;
+  }
+  &__temp-data {
+    text-align: center;
+    font-weight: bold;
+  }
+}
