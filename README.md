@@ -1,10 +1,43 @@
-# Getting Started with Create React App
+# CuatroOchentaApp
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Descubre nuestra innovadora aplicación de pronóstico del clima, diseñada para ofrecerte información meteorológica precisa y en tiempo real en tu idioma. Con una interfaz intuitiva y moderna, esta herramienta te permite conocer el clima actual, consultar previsiones detalladas para los próximos días y recibir actualizaciones sobre temperaturas, máximas, mínimas y condiciones específicas como lluvia o viento.
 
-## Available Scripts
+## Stack tecnologico
 
-In the project directory, you can run:
+## Frontend:
+
+React: Para la construcción de la interfaz de usuario.
+Redux Toolkit: Para la gestión eficiente del estado global de la aplicación.
+Moment.js: Para el manejo de fechas y tiempos, con soporte de localización en español.
+CSS/SCSS o cualquier preprocesador (opcional): Para el diseño y estilo de la interfaz (si aplica).
+
+## Backend/API:
+
+OpenWeatherMap API: Para obtener datos en tiempo real sobre el clima y las previsiones meteorológicas.
+Middleware:
+
+Redux Thunks: Para manejar acciones asincrónicas y coordinar llamadas a APIs dentro de Redux.
+Entorno de Desarrollo:
+
+Node.js: Para la ejecución de scripts de desarrollo y el manejo de dependencias.
+Create React App (CRA): Herramienta para la configuración inicial del proyecto React.
+Gestión de paquetes:
+
+npm (Node Package Manager): Para instalar y administrar dependencias del proyecto.
+Tipado:
+
+TypeScript: Para un desarrollo tipado y robusto, evitando errores comunes en tiempo de desarrollo.
+Integración de Servicios:
+
+WeatherService y WeatherRepository: Patrón de diseño implementado para abstraer las llamadas a la API y mejorar la modularidad.
+Internacionalización:
+
+Moment.js (locale): Configurado para mostrar las fechas y horas en español.
+Control de estado del clima:
+
+Redux Slice: Para dividir y gestionar diferentes aspectos del estado, como la información actual del clima y las previsiones futuras.
+
+Redux DevTools: Para inspeccionar y depurar el estado de Redux en tiempo real (si se habilitó durante el desarrollo).
 
 ### `npm start`
 
@@ -17,30 +50,8 @@ You will also see any lint errors in the console.
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 
 Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
