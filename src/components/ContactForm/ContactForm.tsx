@@ -23,8 +23,7 @@ export const ContactForm = () => {
     resolver: zodResolver(CONTACT_FORM_SCHEMA),
   });
 
-  const onSubmit: SubmitHandler<ContactInputs> = (data: any) => {
-    console.log(data);
+  const onSubmit: SubmitHandler<ContactInputs> = (data: ContactInputs) => {
     toast.success(t('contact-form.success'));
     reset();
   };
@@ -43,27 +42,36 @@ export const ContactForm = () => {
         <h2>{t('contact-form.title')}</h2>
         <div>
           <label>{t('contact-form.name')}</label>
-          <input {...register('name')} />
+          <input placeholder={t('contact-form.name')} {...register('name')} />
           {errors.name && <p>{errors.name.message}</p>}
         </div>
         <div>
           <label>{t('contact-form.bornDate')}</label>
-          <input type="date" {...register('birthDay')} />
+          <input
+            data-testid="datetime-input"
+            placeholder={t('contact-form.bornDate')}
+            type="date"
+            {...register('birthDay')}
+          />
           {errors.birthDay && <p>{errors.birthDay.message}</p>}
         </div>
         <div>
           <label>{t('contact-form.city')}</label>
-          <input {...register('city')} />
+          <input placeholder={t('contact-form.city')} {...register('city')} />
           {errors.city && <p>{errors.city.message}</p>}
         </div>
         <div>
           <label>{t('contact-form.email')}</label>
-          <input {...register('email')} />
+          <input placeholder={t('contact-form.email')} {...register('email')} />
           {errors.email && <p>{errors.email.message}</p>}
         </div>
         <div>
           <label>{t('contact-form.phone')}</label>
-          <input type="number" {...register('phone')} />
+          <input
+            placeholder={t('contact-form.phone')}
+            type="number"
+            {...register('phone')}
+          />
           {errors.phone && <p>{errors.phone.message}</p>}
         </div>
         <button type="submit" disabled={!allFieldFilled}>
